@@ -11,7 +11,9 @@ from pypdf import PdfReader
 from fastapi.middleware.cors import CORSMiddleware
 
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+
+load_dotenv(BASE_DIR / ".env")
 
 client = Groq(
     api_key=os.getenv("GROQ_API_KEY")
@@ -189,9 +191,12 @@ def home():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
-    resume_text=read_pdf(Path("my_resume.pdf"))
-    resume=parse_resume(resume_text)
-    answer=ask_candidate(request.question, resume)
+    resume_path = BASE_DIR / "my_resume.pdf"
+
+    resume_text = read_pdf(resume_path)
+    resume = parse_resume(resume_text)
+    answer = ask_candidate(request.question, resume)
+
     return {
         "answer": answer
     }
