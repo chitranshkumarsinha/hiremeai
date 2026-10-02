@@ -3,7 +3,7 @@ import { Send, Loader2, ServerCrash, Bot, User } from 'lucide-react';
 
 export default function App() {
   // Configurable backend URL
-  const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://hiremeai-backend-c2g2.onrender.com';
 
   // State management
   const [question, setQuestion] = useState('');
