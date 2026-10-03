@@ -56,7 +56,7 @@ export default function App() {
         <div className="bg-indigo-600 p-6 text-white text-center">
           <Bot className="w-12 h-12 mx-auto mb-3 text-indigo-200" />
           <h1 className="text-2xl font-bold tracking-tight">AI Assistant</h1>
-          <p className="text-indigo-200 text-sm mt-1">Ask any question and get an instant response.</p>
+          <p className="text-indigo-200 text-sm mt-1">Ask my AI assistant anything about my background, skills, or projects</p>
         </div>
 
         {/* Content Area */}
